@@ -8,10 +8,11 @@ const iframe = document.querySelector('iframe');
 const play = new Player(iframe);
 
 play.on('timeupdate', throttle(handlerTimes, 1000));
+
 function handlerTimes(data) {
-  //   console.log(data);
   let timeSec = data.seconds;
   localStorage.setItem(localStorageKey, timeSec);
+  //   console.log(data);
 }
 
 const availableTime = localStorage.getItem(localStorageKey);
