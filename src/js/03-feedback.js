@@ -42,5 +42,5 @@ function onHandlerSubmit(evt) {
   console.log(JSON.parse(itemLocalStorage));
   localStorage.removeItem(STORAGE_KEY);
 
-  form.reset();
+  evt.currentTarget.reset();
 }
