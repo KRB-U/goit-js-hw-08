@@ -11,15 +11,15 @@ form.addEventListener('input', throttle(onHandlerInputMessage, 500));
 
 function onHandlerInputMessage(evt) {
   const obj = {
-    emailUser: email.value,
-    userMesg: message.value,
+    email: email.value,
+    message: message.value,
   };
 
   if (evt.target.name === email) {
-    emailUser = evt.target.value;
+    email = evt.target.value;
   }
   if (evt.target.name === message) {
-    userMesg = evt.target.value;
+    message = evt.target.value;
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 }
@@ -31,8 +31,8 @@ if (localStrg) {
 }
 
 function textContent(item) {
-  email.value = item.emailUser;
-  message.value = item.userMesg;
+  email.value = item.email;
+  message.value = item.message;
 }
 
 form.addEventListener('submit', onHandlerSubmit);
