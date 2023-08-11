@@ -38,6 +38,11 @@ function textContent(item) {
 form.addEventListener('submit', onHandlerSubmit);
 
 function onHandlerSubmit(evt) {
+  if (email.value === '' || message.value === '') {
+    alert('Заповни усі поля');
+    return;
+  }
+
   evt.preventDefault();
   const itemLocalStorage = localStorage.getItem(STORAGE_KEY);
   console.log(JSON.parse(itemLocalStorage));
